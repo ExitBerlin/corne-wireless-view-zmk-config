@@ -7,6 +7,30 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include "zmk-helpers/unicode-chars/german.dtsi"
+
+ZMK_UNICODE_PAIR(de_ae, N0, N0, E, N4, N0, N0, C, N4) // ä/Ä
+ZMK_UNICODE_PAIR(de_oe, N0, N0, F, N6, N0, N0, D, N6) // ö/Ö
+ZMK_UNICODE_PAIR(de_ue, N0, N0, F, C, N0, N0, D, C) // ü/Ü
+
+/ {
+    macros {
+        de_ae: macro_ae {
+            label = "ä";
+            bindings = <&macro_tap unicode 0x00E4>; // Unicode für 'ä'
+        };
+        de_oe: macro_oe {
+            label = "ö";
+            bindings = <&macro_tap unicode 0x00F6>; // Unicode für 'ö'
+        };
+        de_ue: macro_ue {
+            label = "ü";
+            bindings = <&macro_tap unicode 0x00FC>; // Unicode für 'ü'
+        };
+    };
+};
+
+
 
 / {
         keymap {
@@ -35,8 +59,8 @@
                         display-name = "Lower";
                         bindings = <
    &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9            &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT         &kp U+00D6 &kp U+00C4
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans           &kp U+00DC  &trans
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT         &kp de_oe &de_ae
+   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans           &kp de_ue  &trans
                           	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
                 };
