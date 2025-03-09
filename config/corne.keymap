@@ -12,8 +12,8 @@
 
 #define HOST_OS 2
 
-#include "zmk-helpers/helper.h"
-#include "zmk-helpers/unicode-chars/german.dtsi"
+//#include "zmk-helpers/helper.h"
+//#include "zmk-helpers/unicode-chars/german.dtsi"
 
 ZMK_UNICODE_PAIR(de_ae, N0, N0, E, N4, N0, N0, C, N4) // ä/Ä
 ZMK_UNICODE_PAIR(de_oe, N0, N0, F, N6, N0, N0, D, N6) // ö/Ö
