@@ -17,24 +17,23 @@
 // ZMK_UNICODE_PAIR(de_oe, N0, N0, F, N6, N0, N0, D, N6) // ö/Ö
 // ZMK_UNICODE_PAIR(de_ue, N0, N0, F, C, N0, N0, D, C) // ü/Ü
 
-/ {
-    macros {
-        de_ae: macro_ae {
-            label = "ä";
-            bindings = <&macro_tap unicode 0x00E4>; // Unicode für 'ä'
-        };
-        de_oe: macro_oe {
-            label = "ö";
-            bindings = <&macro_tap unicode 0x00F6>; // Unicode für 'ö'
-        };
-        de_ue: macro_ue {
+   / {
+        de_ue {
             label = "ü";
-            bindings = <&macro_tap unicode 0x00FC>; // Unicode für 'ü'
+            bindings = <&kp U &kp LS(LS(U))>;
+        };
+
+        de_oe {
+            label = "ö";
+            bindings = <&kp O &kp LS(LS(O))>;
+        };
+
+        de_ae {
+            label = "ä";
+            bindings = <&kp A &kp LS(LS(A))>;
         };
     };
 };
-
-
 
 / {
         keymap {
@@ -96,4 +95,5 @@
                         status = "reserved";
                 };
         };
+
 };
